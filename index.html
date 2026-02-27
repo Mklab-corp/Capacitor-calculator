@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capacitor Charge & Time Constant Calculator | RC Circuit Tool</title>
+  <meta name="description" content="Calculate capacitor charge (Q), stored energy (E), and RC time constant (τ) instantly. Enter capacitance, voltage, and resistance. Free, offline, easy to use.">
+  <meta name="keywords" content="capacitor charge calculator, time constant calculator, RC circuit, capacitor energy, electronics calculator">
+  <meta name="author" content="MKLAB Corporation">
+  <!-- Open Graph for social sharing -->
+  <meta property="og:title" content="Capacitor Charge & Time Constant Calculator">
+  <meta property="og:description" content="Quickly compute Q, E, and τ for any capacitor. Perfect for students and makers.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Capacitor Charge & Time Constant Calculator</h1>
+    <p class="subtitle">Calculate charge (Q), energy (E), and RC time constant (τ) in one place</p>
+  </header>
+
+  <main>
+    <section class="calculator" aria-labelledby="calc-heading">
+      <h2 id="calc-heading">Enter your circuit values</h2>
+      
+      <form id="cap-form" class="calc-form">
+        <!-- Capacitance with unit selection -->
+        <div class="input-group">
+          <label for="capacitance">Capacitance (C):</label>
+          <input type="number" id="capacitance" name="capacitance" step="any" value="10" required>
+          <select id="cap-unit" aria-label="Capacitance unit">
+            <option value="F">F</option>
+            <option value="mF">mF</option>
+            <option value="µF" selected>µF</option>
+            <option value="nF">nF</option>
+            <option value="pF">pF</option>
+          </select>
+        </div>
+
+        <!-- Voltage (volts only) -->
+        <div class="input-group">
+          <label for="voltage">Voltage (V):</label>
+          <input type="number" id="voltage" name="voltage" step="any" value="5" required>
+          <span class="unit-label">V</span>
+        </div>
+
+        <!-- Resistance with unit selection -->
+        <div class="input-group">
+          <label for="resistance">Resistance (R):</label>
+          <input type="number" id="resistance" name="resistance" step="any" value="1" required>
+          <select id="res-unit" aria-label="Resistance unit">
+            <option value="Ω">Ω</option>
+            <option value="kΩ" selected>kΩ</option>
+            <option value="MΩ">MΩ</option>
+          </select>
+        </div>
+      </form>
+
+      <!-- Results area -->
+      <div class="results" aria-live="polite">
+        <h3>Results</h3>
+        <div class="result-item">
+          <span class="result-label">Charge (Q):</span>
+          <span id="charge" class="result-value">0.000050</span> <span id="charge-unit">C</span>
+        </div>
+        <div class="result-item">
+          <span class="result-label">Energy (E):</span>
+          <span id="energy" class="result-value">0.000125</span> <span id="energy-unit">J</span>
+        </div>
+        <div class="result-item">
+          <span class="result-label">Time Constant (τ):</span>
+          <span id="time-constant" class="result-value">0.010</span> <span id="tau-unit">s</span>
+        </div>
+      </div>
+
+      <!-- Explanatory content for SEO and learning -->
+      <article class="explanation">
+        <h3>How it works</h3>
+        <p>The calculator uses three fundamental capacitor formulas:</p>
+        <ul>
+          <li><strong>Charge:</strong> Q = C × V  (coulombs)</li>
+          <li><strong>Energy:</strong> E = ½ × C × V²  (joules)</li>
+          <li><strong>RC Time Constant:</strong> τ = R × C  (seconds)</li>
+        </ul>
+        <p>All values are converted to farads, volts, and ohms before calculation. The time constant τ indicates how quickly the capacitor charges or discharges through the resistor.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MKLAB Corporation. All rights reserved.</p>
+    <p><a href="https://github.com/yourusername/capacitor-calculator" target="_blank">View on GitHub</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
